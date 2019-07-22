@@ -1,14 +1,15 @@
-entity VHDL1 is
-end entity;
+library ieee;
+use ieee.std_logic_1164.all;
 
-architecture simulation of VHDL1 is
+entity Switches_To_LEDs is
+	port (
+		i_Switch_1 : in std_logic;
+		o_LED_1	   : out std_logic);
+	end Switches_To_LEDs;
+	
+architecture RTL of Switches_To_LEDs is
 begin
 
-	process is
-	begin
+	o_LED_1 <= i_Switch_1;
 	
-		report "Hello World";
-		wait;
-	end process;
-
-end architecture;
+	end architecture RTL;
